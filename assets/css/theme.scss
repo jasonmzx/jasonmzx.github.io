@@ -258,7 +258,7 @@ blockquote.warning p{
 nav {
   background-color: #222;
   border-color: #080808;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Ubuntu", sans-serif;
   padding: 0 10px !important;
   border-top: 3px #3CA2A2 solid;
@@ -272,8 +272,11 @@ nav {
     color: white !important;
   }
   .navbar-brand {
-    font-size: 30px;
+    font-size: 1em;
     color: #777;
+  }
+  .navbar-img {
+    height: 100px;
   }
   .navbar-nav {
     margin-left: auto;
@@ -288,7 +291,10 @@ nav {
     padding: 4px 5px;
     margin: 8px 15px 8px 0;
   }
+  
 }
+
+
 
 nav.shrink {
   a {
@@ -296,7 +302,7 @@ nav.shrink {
     padding: 0 10px !important;
   }
   .navbar-brand {
-    font-size: 25px;
+    font-size: 0.5rem;
     height: inherit;
   }
 }
@@ -442,6 +448,9 @@ table.inner-borders {
 
 //********************************************************
 
+.navbar-img {
+  height: "100px";
+}
 
 @media (min-width: 1000px) {
   .twoRow .navbar-collapse {
@@ -457,4 +466,10 @@ table.inner-borders {
   .footer-distributed .footer {
     line-height: 1.8;
   }
+  .nav .navbar-brand {
+    font-size: 0.1em;
+  }
+
+
 }
+
