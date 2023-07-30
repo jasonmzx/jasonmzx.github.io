@@ -11,7 +11,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>jasonmzx | Jason Manarroo | Test Project Post! </title>
+    <title>jasonmzx | Jason Manarroo | Stratified VS. Random Sampling </title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png" >
     <meta name="theme-color" content="#222222"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,7 +88,7 @@
             <div class="col-md-8 offset-md-1">
               <div class="article">
                 <div class="card">
-                  <h1><a href="/projects/2023-07-22-test2/">Test Project Post!</a></h1>
+                  <h1><a href="/2023/stratified-vs-random/">Stratified VS. Random Sampling</a></h1>
                   <div class="post-meta">
                     <div class="post-time">
                       <!-- <i class="fa fa-calendar-alt"></i> -->
@@ -98,26 +98,77 @@
         d="M436 160H12c-6.6 0-12-5.4-12-12v-36c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48v36c0 6.6-5.4 12-12 12zM12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm116 204c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40z">
     </path>
 </svg>
-                      <time>22 Jul 2023</time>
+                      <time>30 Jul 2023</time>
                     </div>
                     <ul>
                       
                         <li>
-                          <a href="/tag/github">github</a></li>
-                      
-                        <li>
-                          <a href="/tag/cat">cat</a></li>
-                      
-                        <li>
-                          <a href="/tag/devops">devops</a></li>
+                          <a href="/tag/machine-learning">machine-learning</a></li>
                       
                     </ul>
                   </div>
                   <div class="post-content">
                     
-                      
+                      <ul class="toc">
+  <li><a href="#stratified-sampling">Stratified Sampling:</a></li>
+  <li><a href="#random-sampling">Random Sampling:</a></li>
+</ul>
                     
-                    
+                    <h2 id="stratified-sampling">Stratified Sampling:</h2>
+
+<p><img src="/assets/custom/pictures/stratified_sampled.png" alt="Stratified Sampling" /></p>
+
+<p><a href="https://www.wallstreetmojo.com/stratified-sampling/">Source_for_example_1_WallStreetMojo.com</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
+
+<span class="n">split</span> <span class="o">=</span> <span class="nc">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">split</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">income</span><span class="sh">"</span><span class="p">]):</span>
+    <span class="n">strat_train_set</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
+    <span class="n">strat_test_set</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+</code></pre></div></div>
+<p><a href="https://machine-learning-apps.github.io/hands-on-ml2/02_end_to_end_machine_learning_project">Code Credits from hands-on-ml2-notebooks , CH.2</a></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">test_size</code> refers to the amount of the dataset you’re sub-setting (here it’s set to 20%)</li>
+  <li><code class="language-plaintext highlighter-rouge">random_state</code> is an optional parameter that’s great to use as static seed, and replicate a certain pattern of randomness again. <em>(E.G: I got 2 datasets, data and labels, with the same size and indices, I can just both Shuffle them by the same seed, and they will match!)</em></li>
+</ul>
+
+<p>In the <strong>for loop</strong>, Iterating over the Stratified Split data specifically by the <code class="language-plaintext highlighter-rouge">income</code> parameter, so it will basically sample an income distribution proportional to our dataset. <em>(For the the <code class="language-plaintext highlighter-rouge">strat_train_set</code> Stratified Training Dataset, &amp; <code class="language-plaintext highlighter-rouge">strat_test_set</code> Stratified Test Dataset)</em></p>
+
+<p><strong>Notice how both stratified datasets have similar proportions :D</strong><br />
+<img src="/assets/custom/pictures/stratified_jupyter.png" alt="Output of strat_&quot;" /></p>
+
+<h2 id="random-sampling">Random Sampling:</h2>
+
+<p><img src="/assets/custom/pictures/random_sample.png" alt="Random Sampling" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># For illustration only. Sklearn has train_test_split()
+</span><span class="k">def</span> <span class="nf">split_train_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">test_ratio</span><span class="p">):</span>
+    <span class="n">shuffled_indices</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">permutation</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="n">test_set_size</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_ratio</span><span class="p">)</span>
+    <span class="n">test_indices</span> <span class="o">=</span> <span class="n">shuffled_indices</span><span class="p">[:</span><span class="n">test_set_size</span><span class="p">]</span>
+    <span class="n">train_indices</span> <span class="o">=</span> <span class="n">shuffled_indices</span><span class="p">[</span><span class="n">test_set_size</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_indices</span><span class="p">],</span> <span class="n">data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_indices</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>This block of code is basically equivalent to Sklearn’s random test set splitter.</li>
+  <li>Uses NumPy to get permutation of the data (randomly sorted), then splits to at <code class="language-plaintext highlighter-rouge">test_ratio</code> and returns.</li>
+</ul>
+
+<p><strong>Behold, the Sklearn equivalent:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">train_set</span><span class="p">,</span> <span class="n">test_set</span> <span class="o">=</span> <span class="nf">train_test_split</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Notice that we can also use the <code class="language-plaintext highlighter-rouge">random_state</code> param again for replicable randomness!</li>
+</ul>
 
                   </div>
                   
