@@ -51,8 +51,8 @@ h5 > code,
 p > pre,
 p > code,
 .note > code {
-  color: tomato;
-  background-color: #333;
+  color: rgb(93, 213, 243);
+  background-color: #112214;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -64,6 +64,7 @@ p > code,
 .highlighter-rouge {
   padding: 1px 4px;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 /* line numbers */

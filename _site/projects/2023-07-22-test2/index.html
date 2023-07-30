@@ -11,7 +11,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>jasonmzx | Jason M. | Portfolio | GPG Expirey Security </title>
+    <title>jasonmzx | Jason Manarroo | Test Project Post! </title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png" >
     <meta name="theme-color" content="#222222"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,14 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container navbar-collapse" style="display: block;">
+        <div style="margin-bottom: 1vh;">
         <a class="navbar-brand " href="/">
-            <img height="100px" src="/favicon.png">
-            jasonmzx | Jason M. | Portfolio
+            <!-- <img class="navbar-img" src="/favicon.png"> -->
+            jasonmzx | Jason Manarroo
         </a>
+        <br>
+        <span style="color:#2AAA8A; font-weight: 600;">Software Engineering Student</span>
+    </div>
 
         <div class="navbar-nav" style="flex-wrap: wrap;">
 
@@ -67,7 +71,7 @@
                   
 
             Tags</a>
-            <a class="nav-item nav-link" href="/links">
+            <a class="nav-item nav-link" href="/projects">
                 <svg xmlns="http://www.w3.org/2000/svg" height="19px"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                   </svg>
@@ -84,7 +88,7 @@
             <div class="col-md-8 offset-md-1">
               <div class="article">
                 <div class="card">
-                  <h1><a href="/2015/gpg-expirey-security/">GPG Expirey Security</a></h1>
+                  <h1><a href="/projects/2023-07-22-test2/">Test Project Post!</a></h1>
                   <div class="post-meta">
                     <div class="post-time">
                       <!-- <i class="fa fa-calendar-alt"></i> -->
@@ -94,61 +98,26 @@
         d="M436 160H12c-6.6 0-12-5.4-12-12v-36c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48v36c0 6.6-5.4 12-12 12zM12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm116 204c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40z">
     </path>
 </svg>
-                      <time>15 Jan 2015</time>
+                      <time>22 Jul 2023</time>
                     </div>
                     <ul>
                       
                         <li>
                           <a href="/tag/github">github</a></li>
                       
+                        <li>
+                          <a href="/tag/cat">cat</a></li>
+                      
+                        <li>
+                          <a href="/tag/devops">devops</a></li>
+                      
                     </ul>
                   </div>
                   <div class="post-content">
                     
-                      <ul class="toc">
-  <li><a href="#subkeys">Subkeys</a></li>
-  <li><a href="#primary-keys">Primary Keys</a></li>
-  <li><a href="#recovering-weak-unrevoked-keys">Recovering Weak Unrevoked Keys</a></li>
-  <li><a href="#keeping-a-revocation-certificate-safe-instead">Keeping a Revocation Certificate Safe Instead</a></li>
-</ul>
+                      
                     
-                    <p><br /></p>
-
-<p>A backup of answer for <a href="https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386#79386">https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386#79386</a></p>
-
-<p><br /></p>
-
-<p><strong>tl;dr</strong>: the expiry date is no reasonable mechanism to protect the primary key, and you should have a revocation certificate at hand.</p>
-
-<hr />
-
-<p>The slightly longer version is, that the effect of the expiration date differs between primary and subkeys, and also what you aim to prevent.</p>
-
-<p><br /></p>
-
-<h2 id="subkeys">Subkeys</h2>
-
-<p>For subkeys, the effect is rather simple: after a given time frame, the subkey will expire. This expiry date can only be changed using the primary key. If an attacker gets hold of your subkey (and only this), it will automatically be inactivated after the expiry date.</p>
-
-<p>The expiry date of a subkey is a great tool to announce you switch your subkeys on a regular base, and that it’s time for others to update your key after a given time.</p>
-
-<p><br /></p>
-
-<h2 id="primary-keys">Primary Keys</h2>
-
-<p>For primary keys, the situation is different. If you have access to the private key, <a href="https://web.archive.org/web/20160513134159/http://madduck.net/blog/2006.06.20:expiring-gpg/">you can change the expiry date as you wish</a>. This means, if an attacker gets access to your private key, he can extend the validity period arbitrarily. Worst case, you lose access to the private key at the same time, then even you cannot revoke the public key any more (you do have a printed or otherwise offline and safely stored revocation certificate, do you?). An expiry date might help in the case you just lose control over the key (while no attacker has control over it). The key will automatically expire after a given time, so there wouldn’t be an unusable key with your name on it sitting forever on the key servers.</p>
-
-<p><br /></p>
-
-<h2 id="recovering-weak-unrevoked-keys">Recovering Weak Unrevoked Keys</h2>
-
-<p>Even worse, expiry dates might provide a false sense of security. The key on the key servers expired, so why bother to revoke it? There is a large number of well-connected RSA 512 bit keys on the key server network, and probably a comparabily large number of weak DSA keys (because of the Debian RNG problems). With faster processors and possibly new knowledge on algorithm weaknesses, an attacker might in future be able to crack the expired, but non-revoked key and use it!</p>
-
-<p><br /></p>
-
-<h2 id="keeping-a-revocation-certificate-safe-instead">Keeping a Revocation Certificate Safe Instead</h2>
-
-<p>If you’ve got a revocation certificate and are sure you never might lose access to both your private key and revocation certificate at the same time (consider fire, (physical) theft, official institutions searching your house), there is absolutely no use in setting an expiry date apart from possible confusion and more work extending it.</p>
+                    
 
                   </div>
                   
@@ -157,12 +126,10 @@
             </div>
             <div class="col-md-3 hidden-xs">
               <div class="sidebar ">
-  <h2>Recent Posts</h2>
+  <h2>Latest Activity</h2>
   <ul>
     
-    <li><a href="/2023/first-post/">Test</a></li>
-    
-    <li><a href="/2015/gpg-expirey-security/">GPG Expirey Security</a></li>
+    <li><a href="/2023/first-post/">First Post!</a></li>
     
   </ul>
 </div>

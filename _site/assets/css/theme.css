@@ -59,7 +59,7 @@ blockquote {
 }
 
 a {
-  color: #60e74e;
+  color: #90EE90;
 }
 
 a, a:hover {
@@ -72,11 +72,11 @@ a:hover {
 }
 
 ::-moz-selection { /* Code for Firefox */
-  background: rgba(238, 72, 100, 0.5176470588);
+  background: rgba(19, 213, 180, 0.5176470588);
 }
 
 ::selection {
-  background: rgba(238, 72, 100, 0.5176470588);
+  background: rgba(19, 213, 180, 0.5176470588);
 }
 
 ul.social-media {
@@ -98,7 +98,7 @@ ul.social-media li > a {
   color: white;
 }
 ul.social-media li > a:hover {
-  color: #60e74e;
+  color: #90EE90;
 }
 
 .share-bar {
@@ -248,7 +248,7 @@ blockquote.warning p {
 nav {
   background-color: #222;
   border-color: #080808;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Ubuntu", sans-serif;
   padding: 0 10px !important;
   border-top: 3px #3CA2A2 solid;
@@ -267,8 +267,11 @@ nav .navbar-brand:hover, nav .nav-link:hover {
   color: white !important;
 }
 nav .navbar-brand {
-  font-size: 30px;
+  font-size: 1em;
   color: #777;
+}
+nav .navbar-img {
+  height: 100px;
 }
 nav .navbar-nav {
   margin-left: auto;
@@ -289,7 +292,7 @@ nav.shrink a {
   padding: 0 10px !important;
 }
 nav.shrink .navbar-brand {
-  font-size: 25px;
+  font-size: 0.5rem;
   height: inherit;
 }
 
@@ -356,6 +359,7 @@ table.inner-borders td {
 .wrapper {
   min-height: 100%;
   position: relative;
+  margin-top: 2vh;
 }
 
 .content {
@@ -419,6 +423,10 @@ table.inner-borders td {
   margin: 0;
 }
 
+.navbar-img {
+  height: "100px";
+}
+
 @media (min-width: 1000px) {
   .twoRow .navbar-collapse {
     clear: left;
@@ -432,6 +440,9 @@ table.inner-borders td {
   }
   .footer-distributed .footer {
     line-height: 1.8;
+  }
+  .nav .navbar-brand {
+    font-size: 0.1em;
   }
 }
 

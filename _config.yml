@@ -20,7 +20,7 @@ social:
 show_footer: false
 
 collections:
-  links:
+  projects:
     output: true
 
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
