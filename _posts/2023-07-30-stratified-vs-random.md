@@ -3,7 +3,7 @@ layout: post
 title: Stratified VS. Random Sampling
 date:   2023-07-30 06:00
 description: Discuss both sampling methods; compare & contrast *(with sk-learn example!)*
-tags: [machine-learning]
+tags: [machine-learning, github, devops]
 toc: true
 ---
 

@@ -2,3 +2,6 @@
 Portfolio &amp; Blog Site
 
 
+`
+bundle exec jekyll serve
+`

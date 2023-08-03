@@ -4,11 +4,11 @@ body {
 }
 
 .card {
-  background-color: #252925;
-  box-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  background-color: #2a2f2a;
+  box-shadow: 0 0 0 0, 0 8px 16px rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
   padding: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .main-page {
@@ -425,6 +425,10 @@ table.inner-borders td {
 
 .navbar-img {
   height: "100px";
+}
+
+.special_container {
+  width: 96vw;
 }
 
 @media (min-width: 1000px) {

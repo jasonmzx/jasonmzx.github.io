@@ -33,7 +33,7 @@ $font-color: #ffffff;
 $background-color: #0f0f0f;
 // $background-color: #292929;
 // $post-panel-color: #39393a;
-$post-panel-color: #252925;
+$post-panel-color: #2a2f2a;
 $footer-background-color: #2e312e;
 $note-color: #87CEFA;
 $warning-color: #ffff00;
@@ -47,10 +47,10 @@ body {
 }
 .card {
   background-color: $post-panel-color;
-  box-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  box-shadow: 0 0 0 0, 0 8px 16px rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
   padding: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .main-page {
   width: 75%;
@@ -451,6 +451,10 @@ table.inner-borders {
 
 .navbar-img {
   height: "100px";
+}
+
+.special_container {
+  width: 96vw;
 }
 
 @media (min-width: 1000px) {
