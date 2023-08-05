@@ -4,7 +4,7 @@ body {
 }
 
 .card {
-  background-color: #2a2f2a;
+  background-color: #1d2020;
   box-shadow: 0 0 0 0, 0 8px 16px rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 20px;
@@ -59,7 +59,7 @@ blockquote {
 }
 
 a {
-  color: #90EE90;
+  color: #b1f38e;
 }
 
 a, a:hover {
@@ -98,7 +98,7 @@ ul.social-media li > a {
   color: white;
 }
 ul.social-media li > a:hover {
-  color: #90EE90;
+  color: #b1f38e;
 }
 
 .share-bar {
@@ -268,7 +268,7 @@ nav .navbar-brand:hover, nav .nav-link:hover {
 }
 nav .navbar-brand {
   font-size: 1em;
-  color: #777;
+  color: #abacab;
 }
 nav .navbar-img {
   height: 100px;

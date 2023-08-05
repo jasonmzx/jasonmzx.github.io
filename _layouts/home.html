@@ -1,51 +1,40 @@
 ---
-layout: page
+layout: blank
 ---
 
-{% assign posts = "" | split: ',' %}
-
-{% for p in site.posts %}
-    {% if p.hidden == null or p.hidden == false %}
-
-       {% assign posts = posts | push: p %}
-
-    {% endif %}
-{% endfor %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Victor+Mono:wght@600&display=swap" rel="stylesheet">
 
 
-{% for post in posts limit:10 %}
+<br></br>
+<h1>
+<span style="margin-left:2vw; color:lightslategrey; font-family: 'Victor Mono', monospace;">Hey! I'm Jason</span>
+</h1>
 
-    <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}">
-            {{ post.title }}
-        </a>
-    </h2>
+<span style="font-size: 14px; margin-left:2vw; color:lightslategrey; font-family: 'Victor Mono', monospace;">Toronto, Canada | Prague, Czechia</span> 
+<br></br> 
 
-    <div class="post-meta">
-        <div class="post-time">
-            <!-- <i class="fa fa-calendar-alt"></i> -->
-            {% include svg_cal.html %}
-            <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
-        </div>
-        <ul>
-            {% for tag in post.tags %}
-            <li><a href="{{'/tag/' | append: tag | relative_url }}">{{ tag }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+<h2>
+<div style="font-family: 'Victor Mono', monospace; margin-left: 5vw; margin-right: 10%">
+I'm an aspiring engineer that has hands-on University Research Experience <span style="color:rgb(193, 193, 193);">(A.I Driven Software)</span> and have an evergrowing curiousity about Hardware & Software Systems as a whole... from D flip-flop(s) to React.js haha!
+<br></br>
+<span style="color:rgb(193, 193, 193);">
+—constantly learning and venturing into various personal projects
+</span>
+<br><br/>
 
-    <div class="post-descr">
-        <p>
-            {{ post.description }}
-        </p>
-    </div>
-
-{% endfor %}
-
-
-<div class="post-footer">
-    <div class="column-full">
-        <h3><a href="{{ 'archive' | relative_url }}">View all posts <i>(Archive)</i> </a></h3>
-    </div>
 </div>
+
+
+<a href="projects" style="margin-left: 2.5vw;">   
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+  </svg>
+  
+(Please check out my Open Source Projects)
+</a>
+
+</h2>
+
 
