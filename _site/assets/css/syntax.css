@@ -23,7 +23,7 @@
 }
 .highlight pre::-webkit-scrollbar {
   height: 10px;
-  background-color: #34362e;
+  background-color: #2e3634;
   border-radius: 0 0 4px 4px;
 }
 .highlight pre::-webkit-scrollbar-thumb {
@@ -80,7 +80,7 @@ p > code,
 }
 
 .c {
-  color: #75715e;
+  color: #5e7574;
 } /* Comment */
 .err {
   color: #960050;

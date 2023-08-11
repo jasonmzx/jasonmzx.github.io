@@ -11,7 +11,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>jasonmzx | Jason Manarroo | First Post! </title>
+    <title>jasonmzx | Jason Manarroo | React In Production </title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png" >
     <meta name="theme-color" content="#222222"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,55 +81,100 @@
     </div>
 </nav>
 
+
     <div class="wrapper">
       <div class="content">
-        <div class="container container-center">
+        <div class="special_container">
           <div class="row">
-            <div class="col-md-8 offset-md-1">
-              <div class="article">
-                <div class="card">
-                  <h1><a href="/2023/first-post/">First Post!</a></h1>
-                  <div class="post-meta">
-                    <div class="post-time">
-                      <!-- <i class="fa fa-calendar-alt"></i> -->
-                      <svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true" data-prefix="fa" data-icon="calendar-alt"
-    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-    <path fill="currentColor"
-        d="M436 160H12c-6.6 0-12-5.4-12-12v-36c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48v36c0 6.6-5.4 12-12 12zM12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm116 204c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40z">
-    </path>
-</svg>
-                      <time>22 Jul 2023</time>
-                    </div>
-                    <ul>
-                      
-                        <li>
-                          <a href="/tag/github">github</a></li>
-                      
-                    </ul>
-                  </div>
-                  <div class="post-content">
-                    
-                      <ul class="toc">
-  <li><a href="#heavy-inspired-by-minnowos-jekyll-site-catfish">Heavy inspired by Minnowo’s Jekyll Site; “catfish”</a></li>
-  <li><a href="#note">NOTE:</a></li>
-</ul>
-                    
-                    <h2 id="heavy-inspired-by-minnowos-jekyll-site-catfish">Heavy inspired by Minnowo’s Jekyll Site; “catfish”</h2>
+            <div class="col-md-9">
+              <div class="card" style="margin-left: 2.5vw;">
+                <h1 id="react-in-production">React In Production</h1>
 
-<p>I essentially forked it, and made my own changes <em>(Removed favicon, Edited navbar, Style tweaks, etc…)</em><br /><br />
-<strong>Link:</strong> <a href="https://github.com/Minnowo/minnowo.github.io/tree/main">Minnowo.github.io’s Source Repository</a></p>
+<p>When it’s time to move your app to production, having multiple JavaScript or CSS files isn’t ideal. When a user visits your site, each of your files will require an <em>additional</em> HTTP request, ~making your site slower to load.~ So to remedy this, you can create a <strong>“build”</strong> of our app, which merges all your CSS files into one file, and does the same with your JavaScript. This way, you minimize the number and size of files the user gets. To create this <strong>“build”</strong>, you use a <strong>“build tool”</strong>. Hence the use of <code class="language-plaintext highlighter-rouge">npm run build</code>.</p>
 
-<p><strong>Link to Site</strong> <a href="https://minnowo.github.io/2023/jekyll-deploy-struggle/">https://minnowo.github.io/2023/jekyll-deploy-struggle/</a> (VERY USEFUL LINK)</p>
+<p>After you run npm run build your build directory will be:</p>
 
-<h2 id="note">NOTE:</h2>
-<p>Make your <code class="language-plaintext highlighter-rouge">&lt;username&gt;.github.io</code> Repository on Github Website! <br /> Initially I made it using the Linux <code class="language-plaintext highlighter-rouge">gh</code> pkg, and used <code class="language-plaintext highlighter-rouge">gh repo create jasonmzx.github.io</code> and it <strong>DID NOT WORK</strong> during production. <em>(GitHub Actions was choking)</em></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/
+  static/
+    css/
+      main.css
+    js/
+      main.js
+</code></pre></div></div>
 
-<p>After I re-created it on GitHub site, It auto-deployed immediately and worked like a charm!</p>
+<p>(Right now, with <code class="language-plaintext highlighter-rouge">npm start</code>, the <strong>React Components</strong> are visible, not minified &amp; combined like a build)</p>
+
+<p><a href="https://stackoverflow.com/questions/43830866/what-is-npm-run-build-in-create-react-app">Quoted from StackOverflow</a></p>
+
+<hr />
+
+<p>From my understanding, you’re essentially <strong>serve</strong>ng a static version of your build <em>(A.K.A Webpack Bundle)</em></p>
+
+<h3 id="what-is-webpack-what-does-it-do-for-react-build">What is Webpack, what does it do for React Build?</h3>
+<p>Webpack simplifies the build process for React applications. It allows developers to manage dependencies and bundle files with ease. Webpack can also optimize code and assets for production, reducing the file size of the application and improving performance.<br />
+<em>(Minification of JavaScript, HTML &amp; CSS… Making React.js Code More Obscured… Bundling of Website)</em></p>
+
+<p>Serving a React Build: <em>(npm <strong><a href="https://www.npmjs.com/package/serve">Serve Library, by Vercel</a></strong> required)</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install -g serve</code><br />
+<code class="language-plaintext highlighter-rouge">serve -s build</code></p>
+
+<p>Serving React Build on specific port: <em>(Auto default is port 3000)</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">serve -s build -l 4000</code></p>
+
+<p><a href="https://create-react-app.dev/docs/deployment/">SRC: Create-React-App Deployment Docs</a></p>
+
+<hr />
+
+<h2 id="what-if-i-dont-want-to-use-serve-and-just-deploy-the-static-site-directly-to-nginx">What if I don’t want to use serve, and just deploy the Static Site directly to NGINX…</h2>
+
+<p>Dockerfile for React.js Build, without serve</p>
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="w"> </span><span class="s">node:16-alpine</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span>
+<span class="c"># Set the working directory to /app inside the container</span>
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+<span class="c"># Copy app files</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+<span class="c"># Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)</span>
+<span class="k">RUN </span>npm ci 
+<span class="c"># Build the app</span>
+<span class="k">RUN </span>npm run build
+
+<span class="c"># Bundle static assets with nginx</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">nginx:1.21.0-alpine</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">production</span>
+<span class="k">ENV</span><span class="s"> NODE_ENV production</span>
+<span class="c"># Copy built assets from `builder` image</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/build /usr/share/nginx/html</span>
+<span class="c"># Add your nginx.conf</span>
+<span class="k">COPY</span><span class="s"> nginx.conf /etc/nginx/conf.d/default.conf</span>
+<span class="c"># Expose port</span>
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+<span class="c"># Start nginx</span>
+<span class="k">CMD</span><span class="s"> ["nginx", "-g", "daemon off;"]</span>
+</code></pre></div></div>
+
+<p>NGINX Setup, it will literally just be manually serving the “Static” HTML built by React Build &amp; the whole Web Pack?</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// nginx.conf
+
+server <span class="o">{</span>
+  listen 80<span class="p">;</span>
+
+  location / <span class="o">{</span>
+    root /usr/share/nginx/html/<span class="p">;</span>
+    include /etc/nginx/mime.types<span class="p">;</span>
+    try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.html<span class="p">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>look into these jason</p>
+
+<p>TODO: https://jsramblings.com/dockerizing-a-react-app/</p>
+
+<p>TODO: Look into this link https://medium.com/bb-tutorials-and-thoughts/how-to-serve-react-application-with-nginx-and-docker-9c51ac2c50ba</p>
 
 
-                  </div>
-                  
-                </div>
               </div>
             </div>
             <div class="col-md-3 hidden-xs">
